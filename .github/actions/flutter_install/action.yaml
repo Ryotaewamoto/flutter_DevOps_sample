@@ -1,0 +1,16 @@
+# ワークフローの表示名
+name: Flutter Install
+description: 'flutter install with fvm'
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v2
+    - uses: kuhnroyal/flutter-fvm-config-action@v1
+    - uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        channel: ${{ env.FLUTTER_CHANNEL }}
+        cache: true
+        cache-key: flutter
+        cache-path: ${{ runner.tool_cache }}/flutter

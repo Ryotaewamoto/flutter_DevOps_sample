@@ -2,6 +2,7 @@ name: "branch deploy demo"
 
 # The workflow will execute on new comments on pull requests - example: ".deploy" as a comment
 on:
+  pull_request:
   issue_comment:
     types: [created]
 

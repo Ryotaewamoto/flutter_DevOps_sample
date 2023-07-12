@@ -27,6 +27,8 @@ jobs:
       # # Run your deployment logic for your project here - examples seen below
 
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
 
       - uses: ./.github/actions/flutter_install
 

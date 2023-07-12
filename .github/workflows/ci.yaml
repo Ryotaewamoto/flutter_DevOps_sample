@@ -28,4 +28,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/flutter_install
-      - run: flutter format --output=none --set-exit-if-changed .
+      - run: dart format --output=none --set-exit-if-changed .

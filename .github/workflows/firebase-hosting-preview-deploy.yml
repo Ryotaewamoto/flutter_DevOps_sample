@@ -20,10 +20,10 @@ jobs:
       # # Run your deployment logic for your project here - examples seen below
 
       # # Checkout your project repository based on the ref provided by the branch-deploy step
-      # - uses: actions/checkout@3.0.2
-      #   if: ${{ steps.branch-deploy.outputs.continue == 'true' }} # skips if the trigger phrase is not found
-      #   with:
-      #     ref: ${{ steps.branch-deploy.outputs.ref }} # uses the detected branch from the branch-deploy step
+      - uses: actions/checkout@3.0.2
+        if: ${{ steps.branch-deploy.outputs.continue == 'true' }} # skips if the trigger phrase is not found
+        with:
+          ref: ${{ steps.branch-deploy.outputs.ref }} # uses the detected branch from the branch-deploy step
 
       - uses: actions/checkout@v3
 

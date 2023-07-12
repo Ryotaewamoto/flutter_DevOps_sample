@@ -1,39 +1,39 @@
-name: "branch deploy demo"
+# name: "branch deploy demo"
 
-# The workflow will execute on new comments on pull requests - example: ".deploy" as a comment
-on:
-  issue_comment:
-    types: [created]
+# # The workflow will execute on new comments on pull requests - example: ".deploy" as a comment
+# on:
+#   issue_comment:
+#     types: [created]
 
-# Permissions needed for reacting and adding comments for IssueOps commands
-permissions:
-  pull-requests: write
-  deployments: write
-  contents: write
-  checks: read
+# # Permissions needed for reacting and adding comments for IssueOps commands
+# permissions:
+#   pull-requests: write
+#   deployments: write
+#   contents: write
+#   checks: read
 
-jobs:
-  demo:
-    if: ${{ github.event.issue.pull_request }} # only run on pull request comments (no need to run on issue comments)
-    runs-on: ubuntu-latest
-    steps:
-      # Execute IssueOps branch deployment logic, hooray!
-      # This will be used to "gate" all future steps below and conditionally trigger steps/deployments
-      - uses: github/branch-deploy@v6.1.0 # replace X.X.X with the version you want to use
-        id: branch-deploy # it is critical you have an id here so you can reference the outputs of this step
-        with:
-          trigger: ".deploy" # the trigger phrase to look for in the comment on the pull request
+# jobs:
+#   demo:
+#     if: ${{ github.event.issue.pull_request }} # only run on pull request comments (no need to run on issue comments)
+#     runs-on: ubuntu-latest
+#     steps:
+#       # Execute IssueOps branch deployment logic, hooray!
+#       # This will be used to "gate" all future steps below and conditionally trigger steps/deployments
+#       - uses: github/branch-deploy@v6.1.0 # replace X.X.X with the version you want to use
+#         id: branch-deploy # it is critical you have an id here so you can reference the outputs of this step
+#         with:
+#           trigger: ".deploy" # the trigger phrase to look for in the comment on the pull request
 
-      # # Run your deployment logic for your project here - examples seen below
+#       # # Run your deployment logic for your project here - examples seen below
 
-      - uses: actions/checkout@v3
+#       - uses: actions/checkout@v3
 
-      - uses: ./.github/actions/flutter_install
+#       - uses: ./.github/actions/flutter_install
 
-      - run: flutter build web
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTER_DEVOPS_SAMPLE }}"
-          projectId: flutter-devops-sample
-          channelId: 'pr-${{ github.event.number }}-${{ github.event.pull_request.head.ref }}'
+#       - run: flutter build web
+#       - uses: FirebaseExtended/action-hosting-deploy@v0
+#         with:
+#           repoToken: "${{ secrets.GITHUB_TOKEN }}"
+#           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTER_DEVOPS_SAMPLE }}"
+#           projectId: flutter-devops-sample
+#           channelId: 'pr-${{ github.event.number }}-${{ github.event.pull_request.head.ref }}'

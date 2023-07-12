@@ -1,76 +1,29 @@
-# name: "branch deploy demo"
+name: "branch deploy demo"
 
-# # The workflow will execute on new comments on pull requests - example: ".deploy" as a comment
-# on:
-#   issue_comment:
-#     types: [created]
-
-# jobs:
-#   demo:
-#     if: ${{ github.event.issue.pull_request }} # only run on pull request comments (no need to run on issue comments)
-#     runs-on: ubuntu-latest
-#     steps:
-#       # Execute IssueOps branch deployment logic, hooray!
-#       # This will be used to "gate" all future steps below and conditionally trigger steps/deployments
-#       - uses: github/branch-deploy@vX.X.X # replace X.X.X with the version you want to use
-#         id: branch-deploy # it is critical you have an id here so you can reference the outputs of this step
-#         with:
-#           trigger: ".deploy" # the trigger phrase to look for in the comment on the pull request
-
-#       # # Run your deployment logic for your project here - examples seen below
-
-#       # # Checkout your project repository based on the ref provided by the branch-deploy step
-#       - uses: actions/checkout@3.0.2
-#         if: ${{ steps.branch-deploy.outputs.continue == 'true' }} # skips if the trigger phrase is not found
-#         with:
-#           ref: ${{ steps.branch-deploy.outputs.ref }} # uses the detected branch from the branch-deploy step
-
-#       - uses: actions/checkout@v3
-
-#       - uses: ./.github/actions/flutter_install
-
-#       - run: flutter build web
-#       - uses: FirebaseExtended/action-hosting-deploy@v0
-#         with:
-#           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-#           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTER_DEVOPS_SAMPLE }}"
-#           projectId: flutter-devops-sample
-
-name: branch-deploy
-
+# The workflow will execute on new comments on pull requests - example: ".deploy" as a comment
 on:
   issue_comment:
     types: [created]
 
-# Permissions needed for reacting and adding comments for IssueOps commands
-permissions:
-  pull-requests: write
-  deployments: write
-  contents: write
-  checks: read
-
 jobs:
-  deploy:
-    name: deploy
+  demo:
+    if: ${{ github.event.issue.pull_request }} # only run on pull request comments (no need to run on issue comments)
     runs-on: ubuntu-latest
-    if: ${{ github.event.issue.pull_request }} # only run on pull request comments
-
     steps:
-
-        # The branch-deploy Action
-      - name: branch-deploy
-        id: branch-deploy
-        uses: github/branch-deploy@vX.X.X
-
-        # If the branch-deploy Action was triggered, checkout our branch
-      - uses: actions/checkout@v3
+      # Execute IssueOps branch deployment logic, hooray!
+      # This will be used to "gate" all future steps below and conditionally trigger steps/deployments
+      - uses: github/branch-deploy@v6.1.0 # replace X.X.X with the version you want to use
+        id: branch-deploy # it is critical you have an id here so you can reference the outputs of this step
         with:
-          ref: ${{ steps.branch-deploy.outputs.ref }}
+          trigger: ".deploy" # the trigger phrase to look for in the comment on the pull request
 
-        # If the branch-deploy Action was triggered, run the deployment (i.e. '.deploy')
-      - name: deploy
-        if: ${{ steps.branch-deploy.outputs.continue == 'true' && steps.branch-deploy.outputs.noop != 'true' }}
-        run: <do-your-deployment> # this could be anything you want
+      # # Run your deployment logic for your project here - examples seen below
+
+      # # Checkout your project repository based on the ref provided by the branch-deploy step
+      - uses: actions/checkout@3.0.2
+        if: ${{ steps.branch-deploy.outputs.continue == 'true' }} # skips if the trigger phrase is not found
+        with:
+          ref: ${{ steps.branch-deploy.outputs.ref }} # uses the detected branch from the branch-deploy step
 
       - uses: actions/checkout@v3
 

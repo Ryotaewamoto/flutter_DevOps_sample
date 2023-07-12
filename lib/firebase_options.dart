@@ -69,7 +69,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '999119847904',
     projectId: 'flutter-devops-sample',
     storageBucket: 'flutter-devops-sample.appspot.com',
-    iosClientId: '999119847904-iuarmpq2hbcqek9kl46gtg3sfmhh1r32.apps.googleusercontent.com',
+    iosClientId:
+        '999119847904-iuarmpq2hbcqek9kl46gtg3sfmhh1r32.apps.googleusercontent.com',
     iosBundleId: 'com.ryotaiwamoto.flutterDevopsSample',
   );
 }

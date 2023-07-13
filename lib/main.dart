@@ -6,7 +6,7 @@ void main() {
   runApp(
     DevicePreview(
       enabled: kIsWeb,
-      builder: (context) => const MyApp(), // Wrap your app
+      builder: (context) => const MyApp(),
     ),
   );
 }
@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.light,
-        colorSchemeSeed: Colors.blue[700],
+        colorSchemeSeed: Colors.green[700],
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.dark,
-        colorSchemeSeed: Colors.blue[700],
+        colorSchemeSeed: Colors.green[700],
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );

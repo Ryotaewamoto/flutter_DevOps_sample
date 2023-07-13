@@ -6,7 +6,7 @@ void main() {
   runApp(
     DevicePreview(
       enabled: kIsWeb,
-      builder: (context) => const MyApp(), // Wrap your app
+      builder: (context) => const MyApp(),
     ),
   );
 }

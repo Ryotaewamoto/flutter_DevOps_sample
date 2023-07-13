@@ -5,7 +5,7 @@
 ## 概要
 
 <p align="center">
-  <img src="https://github.com/Ryotaewamoto/flutter_DevOps_sample/raw/master/figures/flutter_devops_sample_figure.png" alt="Device Preview for Flutter" />
+  <img src="https://github.com/Ryotaewamoto/flutter_DevOps_sample/raw/master/figure_flutter_devops_sample.png" alt="Device Preview for Flutter" />
 </p>
 
 ## 実装手順

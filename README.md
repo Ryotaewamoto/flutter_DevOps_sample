@@ -14,6 +14,13 @@ A new Flutter project.
 5. Firebase Hosting の設定
 6. GitHub Actions の設定
 
+## 事前準備
+
+- [GitHub](https://github.co.jp/) のアカウントを作成
+- [Flutter](https://flutter.dev/docs/get-started/install) のインストール
+- [Firebase CLI](https://firebase.google.com/docs/cli) のインストール
+- [fvm](https://fvm.app/) のインストール
+
 ## 1. コマンドによる Flutter アプリケーションの作成
 
 以下のコマンドを作成したいディレクトリで実行します。``-e`` オプションで不要なコメントやサンプルコードを省いたテンプレートを使用できます。ドメインは個人で使用しているものをお使いください。

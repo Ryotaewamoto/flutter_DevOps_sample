@@ -1,4 +1,6 @@
-# flutter_devops_sample
+# Flutter DevOps サンプル
+
+このリポジトリは、2023年7月11日に開催された [Google I/O Extended Japan](https://developersonair.withgoogle.com/events/ioextendedjapan2023) で[Wasabeef](https://github.com/wasabeef) さんが発表した「Flutter の活用事例 / Live Q&A」を元に作ったサンプルコードです。
 
 ## 概要
 A new Flutter project.

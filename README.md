@@ -1,4 +1,6 @@
-# flutter_devops_sample
+# Flutter DevOps サンプル
+
+このリポジトリは、2023年7月11日に開催された [Google I/O Extended Japan](https://developersonair.withgoogle.com/events/ioextendedjapan2023) で [Wasabeef](https://github.com/wasabeef) さんが発表した「Flutter の活用事例 / Live Q&A」を元に作ったサンプルコードです。
 
 ## 概要
 A new Flutter project.
@@ -11,6 +13,13 @@ A new Flutter project.
 4. Firebase の初期化
 5. Firebase Hosting の設定
 6. GitHub Actions の設定
+
+## 事前準備
+
+- [GitHub](https://github.co.jp/) のアカウントを作成
+- [Flutter](https://flutter.dev/docs/get-started/install) のインストール
+- [Firebase CLI](https://firebase.google.com/docs/cli) のインストール
+- [fvm](https://fvm.app/) のインストール
 
 ## 1. コマンドによる Flutter アプリケーションの作成
 

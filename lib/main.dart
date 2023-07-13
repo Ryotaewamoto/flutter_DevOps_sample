@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.light,
-        colorSchemeSeed: Colors.green[700],
+        colorSchemeSeed: Colors.blue[700],
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.dark,
-        colorSchemeSeed: Colors.green[700],
+        colorSchemeSeed: Colors.blue[700],
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );

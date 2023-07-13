@@ -5,7 +5,12 @@
 ## 概要
 
 <p align="center">
-  <img src="https://github.com/Ryotaewamoto/flutter_DevOps_sample/raw/master/figure_flutter_devops_sample.png" alt="Device Preview for Flutter" />
+  <img src="https://github.com/Ryotaewamoto/flutter_DevOps_sample/blob/develop/figure_flutter_devops_sample.png?raw=true" alt="Flutter DevOps Sample" />
+</p>
+
+### Firebase Hosting によるデプロイ済みのアプリケーション
+<p align="center">
+  <img src="https://github.com/Ryotaewamoto/flutter_DevOps_sample/blob/develop/figure_device_preview.png?raw=true" alt="Flutter DevOps Sample" />
 </p>
 
 ## 実装手順
